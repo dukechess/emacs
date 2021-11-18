@@ -12,7 +12,7 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-(load-theme 'cyberpunk t)
+;; (load-theme 'cyberpunk t)
 
 ;; fix for having AC everywhere
 (define-globalized-minor-mode real-global-auto-complete-mode
@@ -36,7 +36,9 @@
  '(custom-safe-themes
    (quote
     ("20a8ec387dde11cc0190032a9f838edcc647863c824eed9c8e80a4155f8c6037" default)))
- '(package-selected-packages (quote (slime use-package cyberpunk-theme auto-complete))))
+ '(package-selected-packages
+   (quote
+    (ace-window slime use-package cyberpunk-theme auto-complete))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -53,3 +55,6 @@
 (setq inferior-lisp-program "clisp")
 (setq auto-mode-alist (append '(("\\.lisp$" . slime-mode))
 			      auto-mode-alist))
+
+;; quickly switch windows
+(global-set-key (kbd "M-p") 'ace-window)
